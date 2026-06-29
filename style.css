@@ -1,0 +1,469 @@
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#000;
+
+    color:#fff;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    overflow:hidden;
+
+}
+
+/* Background */
+
+#background{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    radial-gradient(circle at top,#1b1b1b,#000 70%);
+
+    z-index:-2;
+
+}
+
+/* Intro */
+
+#intro{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+/* Title */
+
+#intro h1{
+
+    font-size:55px;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+    color:white;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.2);
+
+}
+
+/* Paragraph */
+
+#intro p{
+
+    max-width:700px;
+
+    color:#d6d6d6;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    margin-bottom:45px;
+
+}
+
+/* Button */
+
+#playBtn{
+
+    background:#d4af37;
+
+    color:black;
+
+    border:none;
+
+    padding:18px 45px;
+
+    font-size:20px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-weight:bold;
+
+}
+
+#playBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+    0 0 30px rgba(212,175,55,.6);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+#intro h1{
+
+font-size:38px;
+
+}
+
+#intro p{
+
+font-size:18px;
+
+}
+
+#playBtn{
+
+font-size:18px;
+
+padding:16px 35px;
+
+}
+
+}
+
+/* -------------------------- */
+/* Loading Screen */
+/* -------------------------- */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    background:#000;
+
+    z-index:100;
+
+}
+
+#loading h2{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+#loading p{
+
+    color:#aaa;
+
+    font-size:18px;
+
+}
+
+/* -------------------------- */
+/* Movie */
+/* -------------------------- */
+
+#movie{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    height:100vh;
+
+    padding:30px;
+
+}
+
+/* Photo */
+
+#photo{
+
+    width:280px;
+
+    max-width:80vw;
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+    margin:25px auto;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+    opacity:0;
+
+    transform:scale(.95);
+
+    transition:all 1s ease;
+
+    display:none;
+
+}
+
+#photo.show{
+
+    display:block;
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* Scene */
+
+#sceneContainer{
+
+    width:min(850px,90%);
+
+    text-align:center;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    animation:fade .8s ease;
+
+}
+
+#sceneTitle{
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+}
+
+#sceneText{
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    color:#eeeeee;
+
+    min-height:170px;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.fadeOut{
+
+    opacity:0;
+
+    transform:translateY(-20px);
+
+    transition:all .8s ease;
+
+}
+
+.fadeIn{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:all .8s ease;
+
+}
+/* Stars */
+
+#stars{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.star{
+
+position:absolute;
+
+width:2px;
+
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 3s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{opacity:.2;transform:scale(1);}
+
+50%{opacity:1;transform:scale(1.8);}
+
+}
+
+/* Hearts */
+
+#hearts{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.heart{
+
+position:absolute;
+
+bottom:-40px;
+
+font-size:22px;
+
+animation:floatHeart linear forwards;
+
+}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:translateY(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh);
+
+opacity:0;
+
+}
+
+}
+
+#ending{
+display:none;
+position:fixed;
+inset:0;
+background: radial-gradient(circle at top, #111 0%, #000 60%);
+color:white;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+overflow:hidden;
+}
+
+#finalLetter{
+max-width:750px;
+line-height:1.8;
+font-size:18px;
+white-space:pre-wrap;
+margin:20px 0;
+opacity:0;
+animation:fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+@media (max-width: 768px){
+
+#finalLetter{
+    font-size:16px;
+    line-height:1.6;
+    padding:0 10px;
+}
+
+#ending{
+    padding:20px 15px;
+}
+
+
+}
