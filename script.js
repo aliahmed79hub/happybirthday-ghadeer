@@ -200,7 +200,7 @@ function createStars(){
 
 const stars=document.getElementById("stars");
 
-for(let i=0;i<80;i++){
+for(let i=0;i<40;i++){
 
 const star=document.createElement("div");
 
@@ -257,7 +257,9 @@ function showEnding(){
     const typing = setInterval(()=>{
 
         finalLetter.textContent += message.charAt(i);
-        ending.scrollTop = ending.scrollHeight;
+        if(i % 2 === 0){
+            ending.scrollTop = ending.scrollHeight;
+        }
 
         i++;
 
@@ -273,7 +275,7 @@ function showEnding(){
 
         }
 
-    },40);
+    },60);
 
     }
 
