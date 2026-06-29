@@ -14,39 +14,39 @@ const finalLetter = document.getElementById("finalLetter");
 const scenes = [
 
 {
-title:"The Beginning",
+title:"The Day Everything Changed",
 
-text:"I never imagined that one person could bring so much happiness into my life. But then I met you, and somehow everything started feeling a little brighter.",
+text:"I never imagined that one person could bring so much happiness into my life. But then I met you, and somehow everything started feeling a little brighter.✨",
 
 photo:false
 },
 
 {
-title:"The Best Part",
+title:"My Favorite Picture",
 
-text:"Out of all the pictures in the world, this one is my favorite... because it has my favorite person in it. Every time I look at it, I remember how lucky I am to have someone as wonderful as you in my life.",
-
-photo:true
-},
-
-{
-title:"Something You Should Always Remember",
-
-text:"Never doubt yourself. Never forget how incredible, kind, beautiful, and special you are. The way you smile, the way you care, and the way you make people around you feel... they're all little things that make you unforgettable.",
+text:"Out of all the pictures in the world, this one is my favorite... because it has my favorite person in it. Every time I look at it, I remember how lucky I am to have someone as wonderful as you in my life.❤️",
 
 photo:true
 },
 
 {
-title:"One Wish",
+title:"In Case You Ever Forget...",
 
-text:"If I could make one wish today, it wouldn't be for anything in the world... it would simply be for your smile to stay exactly the way it is forever. Because seeing you happy will always make me happy too.",
+text:"Never doubt yourself. Never forget how incredible, kind, beautiful, and special you are. The way you smile, the way you care, and the way your eyes say things words never could... they're all little things that make you unforgettable.😍",
 
 photo:true
 },
 
 {
-title:"One Last Thing...",
+title:"If I Had One Wish...",
+
+text:"If I could make one wish today, it wouldn't be for anything in the world... it would simply be for your smile to stay exactly the way it is forever. Because seeing you happy will always make me happy too.❤️‍🩹",
+
+photo:true
+},
+
+{
+title:"Before This Ends...",
 
 text:"Before this little movie ends, there's something my heart has wanted to tell you for a long time...",
 
@@ -56,7 +56,7 @@ photo:true
 {
 title:"❤️",
 
-text:"Keep looking... there's one more thing waiting for you.",
+text:"Keep looking... there's one more thing waiting for you.🤫",
 
 photo:true
 }
@@ -245,6 +245,9 @@ function showEnding(){
     const finalLetter = document.getElementById("finalLetter");
 
     ending.style.display = "flex";
+    setTimeout(() => {
+    ending.scrollTop = 0;
+    }, 100);
     finalLetter.textContent = "";
     finalLetter.style.maxWidth = "700px";
     finalLetter.style.lineHeight = "1.8";
@@ -254,6 +257,7 @@ function showEnding(){
     const typing = setInterval(()=>{
 
         finalLetter.textContent += message.charAt(i);
+        ending.scrollTop = ending.scrollHeight;
 
         i++;
 
@@ -269,63 +273,31 @@ function showEnding(){
 
         }
 
-    },25);
+    },40);
 
     }
 
     const message = `
 Happy Birthday, my love.
 
-Today is more than just your birthday. It's the day the world was gifted someone truly beautiful, not only because of how you look, but because of who you are.
+Today is more than just your birthday. It's the day the world was gifted someone truly beautiful, not only because of how you look, but because of who you are.❤️
 
-Thank you for being part of my life. Thank you for every smile you've given me, every conversation we've shared, every laugh that made my day better, and every memory that I'll always keep close to my heart.
+Thank you for being part of my life. Thank you for every smile you've given me, every conversation we've shared, every laugh that made my day better, and every memory that I'll always keep close to my heart.❤️
 
-I hope this year brings you everything you've ever wished for. I hope your dreams come true, your heart stays full of happiness, and your beautiful smile never fades.
+I hope this year brings you everything you've ever wished for. I hope your dreams come true, your heart stays full of happiness, and your beautiful smile never fades.❤️
 
-You deserve to be loved, appreciated, respected, and reminded every single day how amazing you are. I hope you always remember that, even on the days when you don't feel your best.
+You deserve to be loved, appreciated, respected, and reminded every single day how amazing you are. I hope you always remember that, even on the days when you don't feel your best.❤️
 
-If this little website can make you smile for even a few minutes, then I've already received the best gift I could ever ask for.
+If this little website can make you smile for even a few minutes, then I've already received the best gift I could ever ask for.❤️
 
-Thank you for being you. And thank you for making my world a little brighter just by being in it.
+Thank you for being you. And thank you for making my world a little brighter just by being in it.❤️
 
-Happy Birthday, my favorite person.
+Happy Birthday, my favorite person.❤️❤️
 
-I love you more than words will ever be able to explain.
+I love you more than words will ever be able to explain.❤️❤️❤️
 
 Tuqbureni,
 
 always yours, Aly ❤️
 `;
 
-    let i = 0;
-
-    const typing = setInterval(()=>{
-
-        finalLetter.textContent += message.charAt(i);
-
-        i++;
-
-        if(i >= message.length){
-
-            clearInterval(typing);
-
-            setTimeout(()=>{
-
-                replayBtn.style.display = "block";
-
-            },800);
-
-        }
-
-    },25);
-
-
-
-document.getElementById("replayBtn").onclick = () => {
-    location.reload();
-};
-function replayMovie(){
-
-    location.reload();
-
-}
